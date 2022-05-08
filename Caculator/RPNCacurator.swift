@@ -24,11 +24,11 @@ class RPNCacurator: NSObject {
     }
     func priorityOperator(c: Character) -> Int {
         if c == "(" || c == ")" {
-            return 0
+            return 3
         } else if c == "/" || c == "*" {
-            return 1
-        } else {
             return 2
+        } else {
+            return 1
         }
     }
     func convertpostfixRPN(mathString: String) -> [String] {
@@ -63,7 +63,7 @@ class RPNCacurator: NSObject {
                         arrayOperation.append(character)
                         continue
                     }
-                    if priorityOperator(c: laststack!) <= priorityOperator(c: character) {
+                    if priorityOperator(c: laststack!) >= priorityOperator(c: character) {
                         arrayMath.append(String(laststack!))
                         arrayOperation.removeLast()
                     }
