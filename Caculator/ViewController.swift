@@ -143,7 +143,7 @@ class ViewController: UIViewController {
         
     }
     @IBAction func butonCaculatorOnTouch(_ sender: Any) {
-        caculatorRPN.catulator(mathString: stringMathCaculator)
+        caculatorRPN.catulator(mathString: stringMath)
     }
 //    func validateStringMathCaculator(text: String) {
 //
